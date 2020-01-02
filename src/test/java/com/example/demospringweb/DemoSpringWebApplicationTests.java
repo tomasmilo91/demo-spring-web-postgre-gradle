@@ -10,6 +10,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
+
 import org.springframework.test.context.junit4.SpringRunner;
 
 
@@ -31,10 +33,10 @@ class DemoSpringWebApplicationTests {
 	@Test
 	public void contexLoads() throws Exception {
 		//assertThat(controller).isNotNull();
-		//Person abc=new Person("Kandidate First",39, "0904567888","emailfirst@email.cz");
+		Person abc=new Person("Kandidate First",39, "0904567888","emailfirst@email.cz");
 		//entityManager.persist(abc);
 		String str = "Junit is working fine";
-		//assertEquals("Junit is working fine",str);
+		assertEquals("Junit is working fine",str);
 
 	}
 
