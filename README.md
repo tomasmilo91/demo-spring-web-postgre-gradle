@@ -2,6 +2,10 @@
 
 Sample spring boot app with postgreSQL database
 
+## Build and pass
+
+* [Travis CI](https://travis-ci.com/tomasmilo91/demo-spring-web-postgre) - Build system information
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
