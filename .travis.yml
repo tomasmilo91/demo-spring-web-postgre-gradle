@@ -3,5 +3,25 @@ language: java
 jdk:
   - openjdk11
 script: mvn clean verify
+  - psql -c "SELECT version();"
+
 before_install:
   - chmod +x mvnw
+  - sudo apt-get update
+  - sudo apt-get --yes remove postgresql\*
+  - sudo apt-get install -y postgresql-11 postgresql-client-11
+  - sudo cp /etc/postgresql/{9.6,11}/main/pg_hba.conf
+  - sudo service postgresql restart 11
+
+before_script:
+  - psql -c 'create database person2;' -U postgres
+
+services:
+  - postgresql
+
+env:
+  global:
+  - PGUSER=postgres
+  - PGPORT=5432
+
+
