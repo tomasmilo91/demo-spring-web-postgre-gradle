@@ -2,8 +2,10 @@ dist: xenial
 language: java
 jdk:
   - openjdk11
-script: mvn clean verify
+script:
   - psql -c "SELECT version();"
+  - mvn clean verify
+
 
 before_install:
   - chmod +x mvnw
