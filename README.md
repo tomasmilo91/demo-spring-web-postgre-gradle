@@ -1,4 +1,4 @@
-# Demo Spring web postgre app
+# Demo Spring web postgre app  [![Build Status](https://travis-ci.com/tomasmilo91/demo-spring-web-postgre.svg?branch=master)](https://travis-ci.com/tomasmilo91/demo-spring-web-postgre)
 
 Sample spring boot app with postgreSQL database
 
