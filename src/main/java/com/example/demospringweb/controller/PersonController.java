@@ -34,7 +34,7 @@ public class PersonController {
     }
 
     @RequestMapping(value="/create", method = RequestMethod.POST)
-    public List<Person> create(@RequestBody Person person){
+    public List<Person> create(@Valid @RequestBody Person person){
         personRepository.save(person);
         LOG.info("Created user data");
         return personRepository.findAll();
@@ -70,6 +70,11 @@ public class PersonController {
         LOG.info("Edit user data");
         personRepository.saveAll(personRepository.findAll());
         return personRepository.findAll();
+    }
+
+    @GetMapping("/underaveragesalary/{salary}")
+    public List<Person> getUnderSalary(@PathVariable int salary){
+        return personRepository.findBySalaryLessThan(salary);
     }
 
 

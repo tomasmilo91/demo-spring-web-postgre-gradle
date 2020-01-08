@@ -2,13 +2,22 @@ package com.example.demospringweb.model;
 
 import javax.persistence.*;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 @Entity
 public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
+
+    @NotNull
+    @Valid
+    @Size(min=3, message="Name should have atleast 3 characters")
     private String name;
+
     private Integer age;
     private String telephone;
     private String email;
