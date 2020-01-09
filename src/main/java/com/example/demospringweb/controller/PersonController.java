@@ -3,14 +3,12 @@ package com.example.demospringweb.controller;
 import com.example.demospringweb.model.Person;
 import com.example.demospringweb.dao.PersonRepository;
 import com.example.demospringweb.model.PersonType;
-import io.micrometer.core.lang.NonNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.nio.file.Path;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,7 +17,7 @@ import java.util.Optional;
 public class PersonController {
 
     PersonRepository personRepository;
-    private static final Logger LOG = LoggerFactory.getLogger(Person.class);
+    private static final Logger LOG = LoggerFactory.getLogger(PersonController.class);
 
     @Autowired
     public PersonController(PersonRepository personRepository){
@@ -53,7 +51,7 @@ public class PersonController {
     public List<Person> edit(@PathVariable long id,@RequestBody Person personP){
         Optional<Person> foundedP = personRepository.findById(id);
 
-        if(!foundedP.isEmpty()){
+        if(foundedP.isPresent()){
             foundedP.get().setName(personP.getName());
             foundedP.get().setAge(personP.getAge());
             foundedP.get().setTelephone(personP.getTelephone());
@@ -77,5 +75,9 @@ public class PersonController {
         return personRepository.findBySalaryLessThan(salary);
     }
 
+    @GetMapping("/employees/{id}")
+    public Optional<Person> getEmployeeById (@PathVariable("id") long id) {
+        return personRepository.findById(id);
+    }
 
 }
