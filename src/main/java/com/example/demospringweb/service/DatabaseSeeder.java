@@ -28,7 +28,6 @@ public class DatabaseSeeder implements CommandLineRunner {
         persons.add(new Person("Kandidate Second",31, "0907767888","emailsecond@email.cz"));
         persons.add(new Person("Employee First",39, "0909867888","emailemployeesecond@email.cz", 1600));
 
-
         personRepository.saveAll(persons);
 
     }
