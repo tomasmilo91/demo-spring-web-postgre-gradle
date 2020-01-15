@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS 'person';
+--DROP TABLE IF EXISTS 'person';
 CREATE TABLE 'person'(
 'id' int8 not null,
 'age' int4, email varchar(255),
