@@ -14,7 +14,7 @@ before_install:
   - sudo service postgresql restart 11
 
 before_script:
-  - psql -c 'create database person2;' -U postgres
+  - psql -c 'create database demowebpostgre;' -U postgres
 
 services:
   - postgresql
