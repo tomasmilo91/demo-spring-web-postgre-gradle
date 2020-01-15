@@ -41,6 +41,7 @@ class DemoSpringWebApplicationTests {
 		System.out.println("@BeforeAll executed");
 	}
 
+/*
 	@Test
 	public void contexLoads() throws Exception {
 		assertThat(controller).isNotNull();
@@ -53,6 +54,7 @@ class DemoSpringWebApplicationTests {
 
 	}
 
+*/
 
 
 
