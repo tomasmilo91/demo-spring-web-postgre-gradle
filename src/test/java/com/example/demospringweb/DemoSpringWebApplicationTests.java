@@ -5,7 +5,6 @@ import com.example.demospringweb.dao.PersonRepository;
 import com.example.demospringweb.model.Person;
 import jdk.dynalink.linker.support.Guards;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureTestEntityManager;
 import org.springframework.boot.test.context.SpringBootTest;
