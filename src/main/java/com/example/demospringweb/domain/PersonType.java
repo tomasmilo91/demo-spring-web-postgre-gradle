@@ -1,4 +1,4 @@
-package com.example.demospringweb.model;
+package com.example.demospringweb.domain;
 
 public enum PersonType {
     KAN,

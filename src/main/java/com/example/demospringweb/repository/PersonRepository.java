@@ -1,6 +1,6 @@
-package com.example.demospringweb.dao;
+package com.example.demospringweb.repository;
 
-import com.example.demospringweb.model.Person;
+import com.example.demospringweb.domain.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -60,16 +60,6 @@
 		</dependency>
 
 
-
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.plugin</groupId>-->
-<!--			<artifactId>spring-plugin-core</artifactId>-->
-<!--			<version>1.2.0.RELEASE</version>-->
-<!--		</dependency>-->
-
-
-
-
 		<!-- JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage -->
 		<dependency>
 			<groupId>org.junit.platform</groupId>

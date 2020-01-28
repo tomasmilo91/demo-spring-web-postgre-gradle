@@ -1,9 +1,7 @@
 package com.example.demospringweb;
 
-import com.example.demospringweb.controller.PersonController;
-import com.example.demospringweb.dao.PersonRepository;
-import com.example.demospringweb.model.Person;
-import jdk.dynalink.linker.support.Guards;
+import com.example.demospringweb.rest.impl.PersonControllerImpl;
+import com.example.demospringweb.repository.PersonRepository;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureTestEntityManager;
@@ -12,11 +10,9 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -30,7 +26,7 @@ class DemoSpringWebApplicationTests {
 	private TestEntityManager entityManager;
 
 	@Autowired
-	private PersonController controller;
+	private PersonControllerImpl controller;
 
 	@Autowired
 	private PersonRepository personRepository;

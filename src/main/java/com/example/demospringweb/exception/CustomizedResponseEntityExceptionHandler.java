@@ -1,7 +1,6 @@
 package com.example.demospringweb.exception;
 import java.util.Date;
 
-import com.example.demospringweb.model.PersonNotFoundException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

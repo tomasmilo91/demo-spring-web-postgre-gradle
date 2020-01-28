@@ -1,12 +1,10 @@
-package com.example.demospringweb.model;
+package com.example.demospringweb.domain;
 
 import javax.persistence.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-
 
 @Entity
 public class Person {

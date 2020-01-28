@@ -1,8 +1,10 @@
-package com.example.demospringweb.controller;
+package com.example.demospringweb.rest.impl;
 
-import com.example.demospringweb.model.Person;
-import com.example.demospringweb.dao.PersonRepository;
-import com.example.demospringweb.model.PersonType;
+import com.example.demospringweb.dao.PersonDao;
+import com.example.demospringweb.domain.Person;
+import com.example.demospringweb.repository.PersonRepository;
+import com.example.demospringweb.domain.PersonType;
+import com.example.demospringweb.service.PersonService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +16,20 @@ import java.util.Optional;
 
 @RestController  //return list of objects
 @RequestMapping(value = "/persons")
-public class PersonController {
-
-    PersonRepository personRepository;
-    private static final Logger LOG = LoggerFactory.getLogger(PersonController.class);
+public class PersonControllerImpl {
 
     @Autowired
-    public PersonController(PersonRepository personRepository){
+    private PersonDao personDao;
+
+    PersonRepository personRepository;
+
+    @Autowired
+    PersonService personService;
+
+    private static final Logger LOG = LoggerFactory.getLogger(PersonControllerImpl.class);
+
+    @Autowired
+    public PersonControllerImpl(PersonRepository personRepository){
         this.personRepository=personRepository;
     }
 
@@ -28,8 +37,15 @@ public class PersonController {
     public List<Person> getAll(){
         LOG.info("Getall user data");
         return personRepository.findAll();
-
     }
+
+    //getmapping using service
+    @GetMapping(value="/all2")
+    public List<Person> getAll2(){
+        LOG.info("Getall user data");
+        return personService.getAllPersons();
+    }
+
 
     @RequestMapping(value="/create", method = RequestMethod.POST)
     public List<Person> create(@Valid @RequestBody Person person){
