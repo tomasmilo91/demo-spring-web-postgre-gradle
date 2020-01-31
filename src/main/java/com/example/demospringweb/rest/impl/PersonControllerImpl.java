@@ -1,6 +1,6 @@
 package com.example.demospringweb.rest.impl;
 
-import com.example.demospringweb.dao.PersonDao;
+
 import com.example.demospringweb.domain.Person;
 import com.example.demospringweb.repository.PersonRepository;
 import com.example.demospringweb.domain.PersonType;
@@ -18,8 +18,6 @@ import java.util.Optional;
 @RequestMapping(value = "/persons")
 public class PersonControllerImpl {
 
-    @Autowired
-    private PersonDao personDao;
 
     PersonRepository personRepository;
 

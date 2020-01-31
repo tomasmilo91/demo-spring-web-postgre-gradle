@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>demo-spring-web</artifactId>
+	<artifactId>demo-spring-web-postgre</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo-spring-web</name>
+	<name>demo-spring-web-postgre</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
