@@ -9,7 +9,6 @@ import javax.validation.constraints.Size;
 @Entity
 public class Person {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "person_id_generator")
     @SequenceGenerator(name="person_id_generator", sequenceName="person_id_seq",allocationSize=1)
@@ -108,4 +107,29 @@ public class Person {
     public void setId(long id) {
         this.id = id;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Person) {
+            Person p = (Person) obj;
+            if (id == p.getId() && name.equals(p.getName()) && age == p.getAge() && telephone.equals(p.getTelephone()) && email.equals(p.getEmail()))
+                return true;
+            return false;
+        }
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", telephone='" + telephone + '\'' +
+                ", email='" + email + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
+
+
 }
