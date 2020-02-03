@@ -42,9 +42,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class DemoSpringWebApplicationTests {
 
     private final PersonRepository personRepository;
-
     protected final MockMvc mvc;
-
     private final TestRestTemplate restTemplate;
 
     @Autowired
@@ -123,8 +121,6 @@ class DemoSpringWebApplicationTests {
         assertEquals(listPerson.size(), all.size());
 
         assertEquals(listPerson.get(1), all.get(1));
-
-
     }
 
     @Test
