@@ -3,7 +3,6 @@ package com.example.demospringweb.service.impl;
 import com.example.demospringweb.domain.Person;
 import com.example.demospringweb.domain.PersonType;
 import com.example.demospringweb.repository.PersonRepository;
-import com.example.demospringweb.rest.PersonControllerImpl;
 import com.example.demospringweb.service.PersonService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

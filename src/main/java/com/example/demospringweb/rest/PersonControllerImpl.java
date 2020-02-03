@@ -2,11 +2,7 @@ package com.example.demospringweb.rest;
 
 
 import com.example.demospringweb.domain.Person;
-import com.example.demospringweb.repository.PersonRepository;
-import com.example.demospringweb.domain.PersonType;
 import com.example.demospringweb.service.PersonService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,15 +14,10 @@ import java.util.Optional;
 @RequestMapping(value = "/persons")
 public class PersonControllerImpl {
 
-    private final PersonRepository personRepository;
     private final PersonService personService;
 
-    private static final Logger LOG = LoggerFactory.getLogger(PersonControllerImpl.class);
-
     public PersonControllerImpl(
-            @Autowired PersonRepository personRepository,
             @Autowired PersonService personService) {
-        this.personRepository = personRepository;
         this.personService = personService;
     }
 
