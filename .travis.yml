@@ -2,7 +2,7 @@ dist: xenial
 language: java
 jdk:
   - openjdk11
-script: psql -c "SELECT version();" && mvn clean verify
+script: psql -c "SELECT version();" && gradle clean test
 
 
 before_install:
