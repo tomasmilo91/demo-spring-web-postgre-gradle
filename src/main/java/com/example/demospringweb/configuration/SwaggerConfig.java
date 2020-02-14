@@ -34,7 +34,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(getApiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.example.demospringweb.rest.impl"))
+                .apis(RequestHandlerSelectors.basePackage("com.example.demospringweb.rest"))
                 .paths(PathSelectors.any())
                 .build();
     }
