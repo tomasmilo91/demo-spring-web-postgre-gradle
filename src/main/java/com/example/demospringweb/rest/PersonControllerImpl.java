@@ -4,6 +4,9 @@ package com.example.demospringweb.rest;
 import com.example.demospringweb.domain.Person;
 import com.example.demospringweb.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -25,8 +28,6 @@ public class PersonControllerImpl {
     public List<Person> getAll() {
         return personService.getAllPersons();
     }
-
-
 
     @PostMapping(value = "/create")
     public List<Person> create(@Valid @RequestBody Person person) {
@@ -52,5 +53,19 @@ public class PersonControllerImpl {
     public Optional<Person> getEmployeeById(@PathVariable("id") long id) {
         return personService.getEmployeeById(id);
     }
+
+
+
+    /**
+     * Example of endpoint using custom header response
+     */
+    @GetMapping("/employeescustomheader/{id}")
+    public ResponseEntity<Person> getEmployeeById2(@PathVariable("id") long id) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("custom-header-name", "custom-header-value");
+
+        return new ResponseEntity<>(personService.getEmployeeById(id).get(), headers, HttpStatus.OK);
+    }
+
 
 }

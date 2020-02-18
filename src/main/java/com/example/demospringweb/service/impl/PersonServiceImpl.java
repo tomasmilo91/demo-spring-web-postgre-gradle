@@ -70,9 +70,8 @@ public class PersonServiceImpl implements PersonService {
         return personRepository.findBySalaryLessThan(salary);
     }
 
+
     public Optional<Person> getEmployeeById(@PathVariable("id") long id) {
         return personRepository.findById(id);
     }
-
-
 }

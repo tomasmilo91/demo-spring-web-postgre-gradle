@@ -30,7 +30,6 @@ dependencies {
     testImplementation "org.junit.platform:junit-platform-launcher"
     testImplementation "org.junit.jupiter:junit-jupiter-api"
     testImplementation "org.junit.jupiter:junit-jupiter-engine"
-    testImplementation "org.junit.vintage:junit-vintage-engine:5.2.0"
 
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'junit', module: 'junit'
